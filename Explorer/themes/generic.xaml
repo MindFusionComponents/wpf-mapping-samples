@@ -1,0 +1,38 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:MindFusion.Mapping.Wpf.Samples.CS.Explorer">
+
+	<Style TargetType="local:FileListBoxItem">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="local:FileListBoxItem">
+
+					<Canvas Height="25" x:Name="customDecoration" Background="White">	
+						<Image Source="/Explorer;component/Images/file.png" Width="16" Height="16" Margin="2, 5, 2, 4" HorizontalAlignment="Left" />
+						<TextBlock Margin="20, 5, 0, 0" Text="{TemplateBinding Text}" />
+					</Canvas>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="customDecoration" Property="Background" Value="AliceBlue" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="local:DirListBoxItem">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="local:DirListBoxItem">
+					<Grid Background="#FFFFE4B5" Height="25" x:Name="customDecoration">
+						<Image Source="/Explorer;component/Images/dir.png" Width="16" Height="16" Margin="10, 4, 0, 4" HorizontalAlignment="Left" VerticalAlignment="Center" />
+						<TextBlock Text="{TemplateBinding Text}" Tag="{TemplateBinding Text}" Margin="30, 4, 0, 4"  VerticalAlignment="Center" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>
